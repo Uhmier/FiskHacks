@@ -9,7 +9,7 @@ public class Application extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //ParseObject.registerSubclass(Organization.class);
+        ParseObject.registerSubclass(Event.class);
         Parse.initialize(this, "cmIwiwn4EJBcz4HWTB3EnZlad1RpVrfnwrec8fMu", "NJr0oHBFr7pJoINQnr9jW2ubEl9tMnyUfayCgHmk");
 
     }
