@@ -29,13 +29,12 @@
         android:text="Event Date"
         android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/editTextEventDate"
-        android:layout_gravity="center_horizontal" />
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:id="@+id/datePickerEventDate"
+        android:layout_gravity="center_horizontal"
+        android:spinnersShown="true" />
 
     <TextView
         android:layout_width="wrap_content"
