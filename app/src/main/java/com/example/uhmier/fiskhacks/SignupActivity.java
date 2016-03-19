@@ -7,7 +7,8 @@ import android.widget.EditText;
 import butterknife.InjectView;
 
 public class SignupActivity extends AppCompatActivity {
-
+    @InjectView(R.id.editTextSignUpName)
+    EditText signupname;
     @InjectView(R.id.editTextFirstName)
     EditText editTextFirstName;
     @InjectView(R.id.editTextLastName)

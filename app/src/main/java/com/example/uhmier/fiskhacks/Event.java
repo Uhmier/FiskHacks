@@ -11,13 +11,14 @@ import java.util.Date;
 @ParseClassName("Event")
 public class Event extends ParseObject {
     String name;
-    Date date;
+    String date;
     String description;
     String location;
+    String time;
     String author;
 
-    public Date getDate() {
-        return (Date) get("DATE");
+    public String getDate() {
+        return getString("DATE");
     }
 
     public String getAuthor() {
@@ -32,7 +33,15 @@ public class Event extends ParseObject {
         return getString("NAME");
     }
 
-    public void setDate(Date date) {
+    public String getTime(){
+        return getString("TIME");
+    }
+
+    public void setTime(String time){
+        put("TIME", time);
+    }
+
+    public void setDate(String date) {
         put("DATE",date);
     }
 
@@ -47,12 +56,13 @@ public class Event extends ParseObject {
     public void setName(String name) {
         put("NAME", name);
     }
-    public static Event construct(String name, String description, String author, Date date){
+    public static Event construct(String name, String description, String author, String date, String time){
         Event e = new Event();
         e.setName(name);
         e.setAuthor(author);
         e.setDescription(description);
         e.setDate(date);
+        e.setTime(time);
         return e;
     }
 }

@@ -1,10 +1,12 @@
 package com.example.uhmier.fiskhacks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -27,6 +29,10 @@ public class CreateEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_event);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if(ParseUser.getCurrentUser() == null){
+            startActivity(new Intent(CreateEventActivity.this, LoginActivity.class));
+            finish();
+        }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +58,7 @@ public class CreateEventActivity extends AppCompatActivity {
         String name = eventName.getText().toString();
         String description = eventDescription.getText().toString();
         String author = ParseUser.getCurrentUser().getUsername();
-        Event event = Event.construct(name, description, author, new Date());
+        Event event = Event.construct(name, description, author, "January 5th", "19:53");
         event.saveEventually();
     }
 }
