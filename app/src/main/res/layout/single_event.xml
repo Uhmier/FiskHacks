@@ -2,14 +2,16 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="10dp"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    android:background="@drawable/event_list_background">
+    android:background="@drawable/abc_list_pressed_holo_light"
+    android:elevation="@dimen/abc_action_bar_content_inset_material"
+    style="@style/Base.ThemeOverlay.AppCompat.Dark">
     <!-- Title-->
     <TextView
-        android:id="@+id/org_name"
+        android:id="@+id/textViewEventName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Org Name"
@@ -18,17 +20,17 @@
 
     <LinearLayout
         android:id="@+id/catagory"
-        android:layout_below="@+id/org_name"
+        android:layout_below="@+id/textViewEventName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/org_catagory_image"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/chategory_black" />
+            android:src="@drawable/abc_list_pressed_holo_light" />
         <TextView
             android:layout_marginLeft="10dp"
-            android:id="@+id/org_catagories"
+            android:id="@+id/textViewCategories"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:text="Health Issues"
@@ -46,10 +48,10 @@
             android:id="@+id/locationImageView"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/location_black" />
+            android:src="@drawable/abc_list_pressed_holo_light" />
         <TextView
             android:layout_marginLeft="10dp"
-            android:id="@+id/org_location"
+            android:id="@+id/textViewLocation"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:text="2612 W Heiman Street"
@@ -59,7 +61,7 @@
 
     <!-- Amount Raised-->
     <LinearLayout
-        android:id="@+id/amount"
+        android:id="@+id/textViewCost"
         android:layout_below="@+id/location"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -78,7 +80,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/donateBtn"
+        android:id="@+id/buttonAttend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Attend"
@@ -92,6 +94,6 @@
         android:layout_marginRight="9dp"
         android:layout_marginEnd="9dp"
         android:layout_below="@+id/location"
-        android:layout_alignBottom="@+id/amount" />
+        android:layout_alignBottom="@+id/textViewCost" />
 
 </RelativeLayout>
