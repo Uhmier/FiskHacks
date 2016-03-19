@@ -16,24 +16,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Event Name"
-        />
+        android:layout_gravity="center_horizontal" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextEventName"
-        />
+        android:id="@+id/editTextEventName" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Event Location"
-        android:id="@+id/textView" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Event Date"
+        android:layout_gravity="center_horizontal" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextEventLocation" />
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editTextEventDate"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Event Description"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editTextEventDescription"
+        android:layout_gravity="center_horizontal" />
 
 
 </LinearLayout>
