@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Password"
-        android:id="@+id/textView2"
+        android:id="@+id/eventname"
         android:layout_below="@+id/editTextLoginUsername"
         android:layout_centerHorizontal="true" />
 
@@ -38,7 +38,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextLoginPassword"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/eventname"
         android:layout_centerHorizontal="true" />
 
     <Button
