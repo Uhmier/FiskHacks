@@ -25,5 +25,7 @@ public class eventActivity extends AppCompatActivity {
         eventdate.setText(mEvent.getDate());
     }
 
+
+
 }
 
