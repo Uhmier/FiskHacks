@@ -41,6 +41,7 @@ public class CreateEventActivity extends AppCompatActivity {
             startActivity(new Intent(CreateEventActivity.this, LoginActivity.class));
             finish();
         }
+
         buttonSubmitEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
