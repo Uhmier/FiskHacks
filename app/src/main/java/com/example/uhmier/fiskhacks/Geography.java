@@ -10,16 +10,10 @@ import com.google.android.gms.vision.barcode.Barcode.GeoPoint;
  */
 public class Geography {
 
-<<<<<<< HEAD
     public float getDistance(GeoPoint a, GeoPoint b){
         Location loc1 = new Location("Location");
         loc1.setLatitude(a.getLatitudeE6()/ 1E6);
         loc1.setLongitude(a.getLongitudeE6()/ 1E6);
-=======
-    /**public float getDistance(Location a, Location b){
-
-
->>>>>>> origin/master
 
         Location loc2 = new Location("Location2");
         loc2.setLatitude(b.getLatitudeE6()/ 1E6);
@@ -29,7 +23,6 @@ public class Geography {
         return distanceInmeters;
     }
 
-<<<<<<< HEAD
     public GeoPoint getLocationcood(String strAddress){
         Geocoder coder = new Geocoder(this);
         List<Address> address;
@@ -49,14 +42,4 @@ public class Geography {
             return p1;
         }
     }
-=======
-
-    public GetGeolocation(String address){
-
-
-
-    }**/
-
->>>>>>> origin/master
 }
-
