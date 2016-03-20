@@ -25,8 +25,10 @@ public class CreateEventActivity extends AppCompatActivity {
     EditText eventName;
     @InjectView(R.id.buttonSubmitEvent)
     Button buttonSubmitEvent;
-
-    @InjectView(R.id.editTextEventDescription)EditText eventDescription;
+    @InjectView(R.id.datePickerEventDate)
+    DatePicker datePickerEventDate;
+    @InjectView(R.id.editTextEventDescription)
+    EditText eventDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +65,10 @@ public class CreateEventActivity extends AppCompatActivity {
         String name = eventName.getText().toString();
         String description = eventDescription.getText().toString();
         String author = ParseUser.getCurrentUser().getString("NAME");
-        Event event = Event.construct(name, description, author, "January 5th", "19:53");
+        int day = datePickerEventDate.getDayOfMonth();
+        int month = datePickerEventDate.getMonth();
+        int year = datePickerEventDate.getYear();
+        Event event = Event.construct(name, description, author, day + "/" + month + "/" + year, "19:53");
         event.saveEventually();
     }
 }
