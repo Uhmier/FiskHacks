@@ -14,7 +14,6 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-<<<<<<< Updated upstream
         android:text="Full Name"
         android:id="@+id/textView6"
         android:layout_alignParentBottom="true"
@@ -43,11 +42,6 @@
             android:layout_weight="0.5"
             android:id="@+id/editTextLastName" />
     </LinearLayout>
-=======
-        android:text="Name"
-        android:id="@+id/eventdescription"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="fill_parent"
@@ -55,32 +49,22 @@
         android:id="@+id/editTextSignUpName"
         android:layout_below="@+id/eventdescription"
         android:layout_centerHorizontal="true" />
->>>>>>> Stashed changes
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-<<<<<<< Updated upstream
         android:text="Username"
         android:id="@+id/textView"
-=======
-        android:text="Email"
-        android:id="@+id/eventdate"
->>>>>>> Stashed changes
         android:layout_below="@+id/editTextSignUpName"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-<<<<<<< Updated upstream
         android:id="@+id/editTextSignUpUsername"
         android:layout_below="@+id/textView"
-=======
-        android:id="@+id/editTextSignUpEmail"
-        android:layout_below="@+id/eventdate"
->>>>>>> Stashed changes
         android:layout_centerHorizontal="true" />
 
     <TextView
