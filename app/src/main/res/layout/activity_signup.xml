@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Full Name"
-        android:id="@+id/textView6"
+        android:id="@+id/textView_Miles"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

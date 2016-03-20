@@ -15,7 +15,7 @@
         android:text="New Text"
         android:id="@+id/eventname"
         android:layout_marginTop="25dp"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/textView_Miles"
         android:layout_toRightOf="@+id/textView2"
         android:layout_marginLeft="31dp"
         android:layout_marginStart="31dp" />
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Event Details"
-        android:id="@+id/textView6"
+        android:id="@+id/textView_Miles"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
