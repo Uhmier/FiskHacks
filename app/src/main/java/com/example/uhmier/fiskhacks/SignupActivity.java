@@ -1,5 +1,6 @@
 package com.example.uhmier.fiskhacks;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -63,7 +64,9 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void done(com.parse.ParseException e) {
                 if (e == null){
-                    Toast.makeText(SignupActivity.this, "Success", Toast.LENGTH_LONG);
+                    Toast.makeText(SignupActivity.this, "Success", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                    finish();
                 }else{
                     e.printStackTrace();
                 }

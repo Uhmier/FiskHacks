@@ -25,6 +25,7 @@ public class CreateEventActivity extends AppCompatActivity {
     EditText eventName;
     @InjectView(R.id.buttonSubmitEvent)
     Button buttonSubmitEvent;
+    @InjectView(R.id.editTextLocation) EditText eventLocation;
 
     @InjectView(R.id.editTextEventDescription)EditText eventDescription;
 
@@ -52,9 +53,14 @@ public class CreateEventActivity extends AppCompatActivity {
         if(eventName.length() > 64){
             isValid = false;
             eventName.setError("Event name too long");
-        }else if(eventDescription.length() < 1) {
+        }
+        if(eventDescription.length() < 1) {
             isValid = false;
             eventDescription.setError("Please add a description");
+        }
+        if(eventLocation.length()<5){
+            isValid = false;
+            eventLocation.setError("Add a valid address");
         }
         return isValid;
     }
@@ -62,8 +68,9 @@ public class CreateEventActivity extends AppCompatActivity {
     private void saveInputs(){
         String name = eventName.getText().toString();
         String description = eventDescription.getText().toString();
+        String location = eventLocation.getText().toString();
         String author = ParseUser.getCurrentUser().getString("NAME");
-        Event event = Event.construct(name, description, author, "January 5th", "19:53");
+        Event event = Event.construct(name, description, author, location, "January 5th", "19:53");
         event.saveEventually();
     }
 }
