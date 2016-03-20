@@ -66,7 +66,7 @@ public class CreateEventActivity extends AppCompatActivity {
         String description = eventDescription.getText().toString();
         String author = ParseUser.getCurrentUser().getString("NAME");
         int day = datePickerEventDate.getDayOfMonth();
-        int month = datePickerEventDate.getMonth();
+        int month = datePickerEventDate.getMonth() + 1;
         int year = datePickerEventDate.getYear();
         Event event = Event.construct(name, description, author, day + "/" + month + "/" + year, "19:53");
         event.saveEventually();
