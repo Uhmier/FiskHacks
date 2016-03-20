@@ -28,27 +28,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="First"
             android:ems="10"
             android:layout_weight="0.5"
-            android:id="@+id/editTextFirstName" />
+            android:id="@+id/editTextFirstName"
+            android:hint="First" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Last"
             android:ems="10"
             android:layout_weight="0.5"
-            android:id="@+id/editTextLastName" />
+            android:id="@+id/editTextLastName"
+            android:hint="Last" />
     </LinearLayout>
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextSignUpName"
-        android:layout_below="@+id/eventdescription"
-        android:layout_centerHorizontal="true" />
 
 
     <TextView
@@ -82,5 +75,12 @@
         android:id="@+id/editTextSignUpPassword"
         android:layout_below="@+id/eventlocation"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:id="@+id/buttonSignup"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
