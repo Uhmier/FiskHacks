@@ -5,7 +5,7 @@ package com.example.uhmier.fiskhacks;
  */
 public class Geography {
 
-    public float getDistance(Location a, Location b){
+    /**public float getDistance(Location a, Location b){
 
 
 
@@ -13,10 +13,11 @@ public class Geography {
     }
 
 
-    public .... getGeolocation(String address){
+    public GetGeolocation(String address){
 
 
 
-    }
+    }**/
 
 }
+
