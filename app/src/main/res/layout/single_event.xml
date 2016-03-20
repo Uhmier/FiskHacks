@@ -10,7 +10,8 @@
     android:layout_marginBottom="10dp"
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
-    android:paddingTop="5dp">
+    android:paddingTop="5dp"
+    android:elevation="@dimen/abc_floating_window_z">
     <!-- Title-->
     <TextView
         android:id="@+id/textViewEventName"
