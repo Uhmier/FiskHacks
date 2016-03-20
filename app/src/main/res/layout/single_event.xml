@@ -30,7 +30,7 @@
             android:src="@drawable/abc_list_pressed_holo_light" />
         <TextView
             android:layout_marginLeft="10dp"
-            android:id="@+id/textViewCategories"
+            android:id="@+id/textViewEventDate"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:text="Health Issues"
@@ -51,7 +51,7 @@
             android:src="@drawable/abc_list_pressed_holo_light" />
         <TextView
             android:layout_marginLeft="10dp"
-            android:id="@+id/textViewLocation"
+            android:id="@+id/textViewEventLocation"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:text="2612 W Heiman Street"
@@ -61,7 +61,7 @@
 
     <!-- Amount Raised-->
     <LinearLayout
-        android:id="@+id/textViewCost"
+        android:id="@+id/textViewEventAuthor"
         android:layout_below="@+id/location"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -94,6 +94,6 @@
         android:layout_marginRight="9dp"
         android:layout_marginEnd="9dp"
         android:layout_below="@+id/location"
-        android:layout_alignBottom="@+id/textViewCost" />
+        android:layout_alignBottom="@+id/textViewEventAuthor" />
 
 </RelativeLayout>
