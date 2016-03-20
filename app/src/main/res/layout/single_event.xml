@@ -7,10 +7,10 @@
     android:layout_marginRight="5dp"
     android:background="@drawable/abc_cab_background_internal_bg"
     style="@style/Base.V11.Theme.AppCompat.Light.Dialog"
-    android:paddingBottom="15dp"
+    android:layout_marginBottom="10dp"
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
-    android:paddingTop="10dp">
+    android:paddingTop="5dp">
     <!-- Title-->
     <TextView
         android:id="@+id/textViewEventName"
@@ -25,11 +25,7 @@
         android:layout_below="@+id/textViewEventName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/org_catagory_image"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/abc_list_pressed_holo_light" />
+
         <TextView
             android:layout_marginLeft="10dp"
             android:id="@+id/textViewEventDate"
@@ -46,11 +42,6 @@
         android:layout_below="@+id/catagory"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/locationImageView"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/abc_list_pressed_holo_light" />
         <TextView
             android:layout_marginLeft="10dp"
             android:id="@+id/textViewEventLocation"
@@ -67,11 +58,6 @@
         android:layout_below="@+id/location"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/amountImageView"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            />
         <TextView
             android:layout_marginLeft="10dp"
             android:id="@+id/textViewEventAuthor"
