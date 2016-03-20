@@ -83,7 +83,7 @@
         android:id="@+id/buttonAttend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="N/A"
+        android:text="Attend"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
         android:background="@android:color/transparent"
