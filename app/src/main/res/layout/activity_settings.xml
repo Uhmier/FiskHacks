@@ -29,27 +29,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10 Miles"
-            android:onClick="onRadioButtonClicked"
             android:checked="true" />
         <RadioButton android:id="@+id/radio_25Miles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="25 Miles"
-            android:onClick="onRadioButtonClicked"
             android:checked="false" />
 
         <RadioButton android:id="@+id/radio_50Miles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="50 Miles"
-            android:onClick="onRadioButtonClicked"
             android:checked="false" />
 
         <RadioButton android:id="@+id/radio_100Miles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="100 Miles"
-            android:onClick="onRadioButtonClicked"
             android:checked="false" />
     </RadioGroup>
 
