@@ -19,6 +19,7 @@ public class CreateEventActivity extends AppCompatActivity {
 
     @InjectView(R.id.editTextEventName)
     EditText eventName;
+
     @InjectView(R.id.editTextEventDescription)EditText eventDescription;
 
     @Override
@@ -48,6 +49,7 @@ public class CreateEventActivity extends AppCompatActivity {
         }
         return isValid;
     }
+
     private void saveInputs(){
         String name = eventName.getText().toString();
         String description = eventDescription.getText().toString();
