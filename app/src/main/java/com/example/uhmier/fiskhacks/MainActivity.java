@@ -77,12 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ParseUser user = ParseUser.getCurrentUser();
-        if(user != null){
-            defaultDistance =  user.get("DISTANCE_PREF") == null? 100000: (int) user.get("DISTANCE_PREF");
-        }else{
-            isAnywhere = true;
-        }
+
 
         updateList();
     }
@@ -107,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }else if(id == R.id.action_refresh){
             updateList();
+        }else if(id == R.id.action_logout){
+            ParseUser.logOut();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -118,11 +117,19 @@ public class MainActivity extends AppCompatActivity {
         _progressDialog.setMessage("Loading Events");
         _progressDialog.setCancelable(true);
         _progressDialog.show();
+        ParseUser user = ParseUser.getCurrentUser();
+        if(user != null){
+            defaultDistance =  user.get("DISTANCE_PREF") == null? 100000: (int) user.get("DISTANCE_PREF");
+        }else{
+            isAnywhere = true;
+        }
         events.clear();
+
         ParseQuery<Event> query = ParseQuery.getQuery("Event");
         query.findInBackground(new FindCallback<Event>() {
             @Override
             public void done(List<Event> eventList, ParseException e) {
+                ParseUser user = ParseUser.getCurrentUser();
                 if(isAnywhere) events = eventList;
                 else {
                     for (Event currEvent : eventList) {

@@ -86,4 +86,11 @@ public class CreateEventActivity extends AppCompatActivity {
         event.saveEventually();
         startActivity(new Intent(CreateEventActivity.this, MainActivity.class));
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(CreateEventActivity.this, MainActivity.class));
+        finish();
+    }
 }

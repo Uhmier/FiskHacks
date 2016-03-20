@@ -39,6 +39,10 @@ public class SettingsActivity extends AppCompatActivity {
                     ParseUser user = ParseUser.getCurrentUser();
                     user.put("DISTANCE_PREF", 50000);
                     user.saveEventually();
+                }else{
+                    ParseUser user = ParseUser.getCurrentUser();
+                    user.put("DISTANCE_PREF", Integer.MAX_VALUE);
+                    user.saveEventually();
                 }
             }
         });
