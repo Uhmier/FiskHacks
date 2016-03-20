@@ -46,20 +46,20 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventHolde
 
     @Override
     public void onBindViewHolder(EventHolder holder, int position) {
-        Event currEvent = list.get(position);
+        final Event currEvent = list.get(position);;
         holder.mEventNameView.setText(currEvent.getName());
         holder.mDateView.setText(currEvent.getDate() + "\t" + currEvent.getTime());
         holder.mAuthorView.setText(currEvent.getAuthor());
         holder.mEventLocationView.setText(currEvent.getLocation());
-        /**holder.mEventNameView.setOnClickListener(new View.OnClickListener() {
+        holder.mainView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity, EventActivity.class);
+                Intent intent = new Intent(activity, eventActivity.class);
                 intent.putExtra("id", currEvent.getObjectId());
                 activity.startActivity(intent);
             }
         });
-         **/
+
 
 
     }
@@ -74,9 +74,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventHolde
         private TextView mEventLocationView;
         private TextView mDateView;
         private TextView mAuthorView;
+        private View mainView;
 
         public EventHolder(View itemView) {
             super(itemView);
+            mainView = itemView;
             mEventLocationView = (TextView) itemView.findViewById(R.id.textViewEventLocation);
             mEventNameView = (TextView) itemView.findViewById(R.id.textViewEventName);
             mDateView = (TextView) itemView.findViewById(R.id.textViewEventDate);

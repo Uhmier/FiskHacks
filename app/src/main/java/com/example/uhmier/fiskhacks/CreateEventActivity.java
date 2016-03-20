@@ -47,6 +47,7 @@ public class CreateEventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(checkInputs()) saveInputs();
+
             }
         });
     }
@@ -73,5 +74,6 @@ public class CreateEventActivity extends AppCompatActivity {
         int year = datePickerEventDate.getYear();
         Event event = Event.construct(name, description, author, location,  day + "/" + month + "/" + year, "19:53");
         event.saveEventually();
+        startActivity(new Intent(CreateEventActivity.this, MainActivity.class));
     }
 }
