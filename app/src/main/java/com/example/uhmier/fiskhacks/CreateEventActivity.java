@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import com.parse.ParseUser;
 
@@ -29,7 +30,11 @@ public class CreateEventActivity extends AppCompatActivity {
     DatePicker datePickerEventDate;
     @InjectView(R.id.editTextEventDescription)
     EditText eventDescription;
-    @InjectView(R.id.editTextLocation) EditText eventLocation;
+    @InjectView(R.id.editTextLocation)
+    EditText eventLocation;
+    @InjectView(R.id.timePicker_Event)
+    TimePicker timePicker;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +77,12 @@ public class CreateEventActivity extends AppCompatActivity {
         int day = datePickerEventDate.getDayOfMonth();
         int month = datePickerEventDate.getMonth() + 1;
         int year = datePickerEventDate.getYear();
-        Event event = Event.construct(name, description, author, location,  day + "/" + month + "/" + year, "19:53");
+        int hour = timePicker.getCurrentHour();
+        String ampm = hour>12? "pm":"am";
+        hour = hour>12? hour-12 :hour ;
+        int minute = timePicker.getCurrentMinute();
+
+        Event event = Event.construct(name, description, author, location,  day + "/" + month + "/" + year, hour + ":" + minute + " " + ampm);
         event.saveEventually();
         startActivity(new Intent(CreateEventActivity.this, MainActivity.class));
     }
