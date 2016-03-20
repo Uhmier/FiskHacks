@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
@@ -15,12 +16,15 @@ import com.parse.ParseUser;
 
 import java.util.Date;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class CreateEventActivity extends AppCompatActivity {
 
     @InjectView(R.id.editTextEventName)
     EditText eventName;
+    @InjectView(R.id.buttonSubmitEvent)
+    Button buttonSubmitEvent;
 
     @InjectView(R.id.editTextEventDescription)EditText eventDescription;
 
@@ -28,25 +32,24 @@ public class CreateEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
+        ButterKnife.inject(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if(ParseUser.getCurrentUser() == null){
             startActivity(new Intent(CreateEventActivity.this, LoginActivity.class));
             finish();
         }
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        buttonSubmitEvent.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(checkInputs())saveInputs();
+            public void onClick(View v) {
+                if(checkInputs()) saveInputs();
             }
         });
     }
 
     private boolean checkInputs(){
         boolean isValid = true;
-        if(eventName.length() > 35){
+        if(eventName.length() > 64){
             isValid = false;
             eventName.setError("Event name too long");
         }else if(eventDescription.length() < 1) {
@@ -59,7 +62,7 @@ public class CreateEventActivity extends AppCompatActivity {
     private void saveInputs(){
         String name = eventName.getText().toString();
         String description = eventDescription.getText().toString();
-        String author = ParseUser.getCurrentUser().getUsername();
+        String author = ParseUser.getCurrentUser().getString("NAME");
         Event event = Event.construct(name, description, author, "January 5th", "19:53");
         event.saveEventually();
     }

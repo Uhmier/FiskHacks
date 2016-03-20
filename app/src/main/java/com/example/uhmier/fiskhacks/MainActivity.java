@@ -20,6 +20,8 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
     List<Event> patients = new ArrayList<>();
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.inject(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.event_lists);
@@ -75,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
     public void updateList() {
         _progressDialog = new ProgressDialog(this);
         _progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        _progressDialog.setMessage("Loading Patients");
+        _progressDialog.setMessage("Loading Events");
         _progressDialog.setCancelable(true);
         _progressDialog.show();
-        ParseQuery<Event> query = ParseQuery.getQuery("Patient");
+        ParseQuery<Event> query = ParseQuery.getQuery("Event");
         query.findInBackground(new FindCallback<Event>() {
             @Override
             public void done(List<Event> patientList, ParseException e) {
