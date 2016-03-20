@@ -49,6 +49,14 @@ public class Event extends ParseObject {
         put("AUTHOR", author);
     }
 
+    public String getLocation() {
+        return getString("LOCATION");
+    }
+
+    public void setLocation(String loc){
+        put("LOCATION", loc);
+    }
+
     public void setDescription(String description) {
         put("DESCRIPTION", description);
     }
@@ -56,10 +64,11 @@ public class Event extends ParseObject {
     public void setName(String name) {
         put("NAME", name);
     }
-    public static Event construct(String name, String description, String author, String date, String time){
+    public static Event construct(String name, String description, String author, String location, String date, String time){
         Event e = new Event();
         e.setName(name);
         e.setAuthor(author);
+        e.setLocation(location);
         e.setDescription(description);
         e.setDate(date);
         e.setTime(time);

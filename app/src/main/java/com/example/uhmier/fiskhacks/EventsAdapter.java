@@ -50,7 +50,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventHolde
         holder.mEventNameView.setText(currEvent.getName());
         holder.mDateView.setText(currEvent.getDate() + "\t" + currEvent.getTime());
         holder.mAuthorView.setText(currEvent.getAuthor());
-        //holder.mEventLocationView.setText();
+        holder.mEventLocationView.setText(currEvent.getLocation());
         /**holder.mEventNameView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
